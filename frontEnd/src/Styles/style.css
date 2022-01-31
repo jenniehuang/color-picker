@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.App .window-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.App .window-body .Color-Picker {
+  padding: 1rem;
+}
+
+.App .window-body .dashboard {
+  width: 400px;
+  height: 50%;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.App .window-body .dashboard * {
+  padding: 0.5rem;
+}
+
+.leaderboard {
+  padding: 1rem;
+  width: 400px;
+  border: 1px solid green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.leaderboard .board-title {
+  padding-bottom: 1rem;
+}
+
+.leaderboard #users img {
+  width: 40px;
+  height: 40px;
+}
+
+.leaderboard #title {
+  font-size: 2rem;
+}
+
+.leaderboard table,
+.leaderboard td {
+  border: 1px solid #333;
+}
+
+.leaderboard tbody {
+  font-size: 1rem;
+}
+
+.score-board {
+  width: 400px;
+  height: 100px;
+}
+
+.color-box {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.submit-form {
+  margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .window {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

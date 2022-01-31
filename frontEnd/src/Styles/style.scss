@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  .window-body {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    .Color-Picker {
+      padding: 1rem;
+    }
+
+    .dashboard {
+      width: 400px;
+      height: 50%;
+      border: 1px solid black;
+
+      * {
+        padding: 0.5rem;
+      }
+
+      //for game zone display
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+    }
+  }
+}
+
+.leaderboard {
+  padding: 1rem;
+
+  width: 400px;
+  // height: 200px;
+
+  border: 1px solid green;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  .board-title {
+    padding-bottom: 1rem;
+  }
+
+  #users {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  #title {
+    font-size: 2rem;
+  }
+  table,
+  td {
+    border: 1px solid #333;
+  }
+  tbody {
+    font-size: 1rem;
+  }
+}
+
+.score-board {
+  width: 400px;
+  height: 100px;
+}
+
+.color-box {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.submit-form {
+  margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .window {
+    width: 100%;
+  }
+}
