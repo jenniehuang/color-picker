@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+body {
+  background-color: #00807f;
+}
+
 .App {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,10 +47,12 @@
   padding: 1rem;
 }
 
+.App .window-body .start-btn {
+  margin: 1rem 0rem;
+}
+
 .App .window-body .dashboard {
   width: 400px;
-  height: 50%;
-  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,10 +75,28 @@
   padding: 0.5rem;
 }
 
+.App .window-body .dashboard .timer {
+  width: 400px;
+}
+
+.App .window-body .dashboard .timer p {
+  font-size: 1rem;
+}
+
+.App .status-bar {
+  width: 100%;
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.App .help-window {
+  width: 430px;
+}
+
 .leaderboard {
   padding: 1rem;
   width: 400px;
-  border: 1px solid green;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,7 +131,6 @@
 
 .score-board {
   width: 400px;
-  height: 100px;
 }
 
 .color-box {
@@ -117,6 +140,11 @@
 
 .submit-form {
   margin: 10px;
+}
+
+#help {
+  width: 250px;
+  margin: 1rem;
 }
 
 @media screen and (max-width: 600px) {

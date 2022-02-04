@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db/:/root/db/
+
+  app:
+    image: 690726419119.dkr.ecr.ap-northeast-3.amazonaws.com/color-picker:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./db/:/db/
+    command: bash run.sh
+
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - app
+    restart: always
+    environment:
+      DOMAINS: "api.color-picker.xyz -> http://app:8080"
+      # STAGE: 'production' # Don't use production until staging works
+      # FORCE_RENEW: 'true'

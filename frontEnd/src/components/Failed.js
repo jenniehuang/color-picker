@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 import failed from "../pics/failed.png";
 import success from "../pics/success.png";
 
-const Failed = ({ score }) => {
-  const navigate = useNavigate();
+const Failed = ({
+  score,
+  setScore,
+  setOriginalRGB,
+  setCorrectColor,
+  setIsFailed,
+  setStarted,
+}) => {
   const [userName, setUserName] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(null);
   const [message, setMessage] = useState("");
@@ -17,14 +22,16 @@ const Failed = ({ score }) => {
     } else {
       try {
         const data = { userName, score };
-        console.log("fetching");
-        const response = await fetch("/add_user", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/add_user`,
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }
+        );
 
         setIsSubmitted(true);
       } catch (e) {
@@ -61,7 +68,16 @@ const Failed = ({ score }) => {
       )}
       <button
         onClick={() => {
-          navigate(0);
+          setIsFailed(false);
+          setScore(0);
+          let originalR = Math.floor(Math.random() * 255) + 1;
+          let originalG = Math.floor(Math.random() * 255) + 1;
+          let originalB = Math.floor(Math.random() * 255) + 1;
+          let correctR = 255 - originalR;
+          let correctG = 255 - originalG;
+          let correctB = 255 - originalB;
+          setOriginalRGB([originalR, originalG, originalB]);
+          setCorrectColor([correctR, correctG, correctB]);
         }}
         className="play-again-btn"
       >
@@ -70,7 +86,7 @@ const Failed = ({ score }) => {
 
       <button
         onClick={() => {
-          navigate("/");
+          setStarted(false);
         }}
         className="back-to-hp-btn"
       >

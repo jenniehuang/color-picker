@@ -1,16 +1,24 @@
 import React from "react";
 import Leaderboard from "./Leaderboard";
-import { Link } from "react-router-dom";
+import help_btn from "../pics/btn.png";
 
-const HomePage = () => {
+const HomePage = ({ setStarted }) => {
+  const start = () => {
+    setStarted(true);
+  };
+
   return (
     <div>
       <h2 className="Color-Picker">Color Picker!!!</h2>
       <Leaderboard />
 
-      <Link to="/dashboard">
-        <button className="start-btn">Start</button>
-      </Link>
+      <button onClick={start} className="start-btn">
+        Start
+      </button>
+      <p>
+        click <img src={help_btn} alt="" /> on top right to learn more about the
+        game.
+      </p>
     </div>
   );
 };

@@ -5,10 +5,18 @@ const Leaderboard = () => {
   const [userData, setUserData] = useState([]);
 
   useEffect(async () => {
-    let response = await fetch("/user_data");
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/user_data`);
     let data = await response.json();
     setUserData(data.user_data);
   }, []);
+
+  const truncate = (s) => {
+    const maxLength = 20;
+    if (s.length > maxLength) {
+      return `${s.substr(0, maxLength)}...`;
+    }
+    return s;
+  };
 
   return (
     <div className="leaderboard">
@@ -31,7 +39,7 @@ const Leaderboard = () => {
           {userData.map((v, i) => (
             <tr key={i}>
               <td>{i + 1}</td>
-              <td>{v.username}</td>
+              <td>{truncate(v.username)}</td>
               <td>{v.score}</td>
             </tr>
           ))}

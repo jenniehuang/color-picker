@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ColorBox from "./ColorBox";
 import ScoreBoard from "./ScoreBoard";
+import Timer from "./Timer";
 
 import Failed from "./Failed";
 
-const DashBoard = () => {
+const DashBoard = ({ setStarted }) => {
   const [score, setScore] = useState(0);
 
   let originalR = Math.floor(Math.random() * 255) + 1;
@@ -71,15 +72,18 @@ const DashBoard = () => {
     setScore(score + 1);
   };
 
-  firstBoxArr[correctNumber] = [
-    correctBoxStyle,
-    "color-box correct-box",
-    correctFunction,
-  ];
+  firstBoxArr[correctNumber] = [correctBoxStyle, "color-box", correctFunction];
+
+  //---------------------------------------------------------------
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 5);
 
   return (
     <div className={"dashboard"}>
       {!isFailed && <ScoreBoard score={score} />}
+      {!isFailed && (
+        <Timer score={score} expiryTimestamp={time} setIsFailed={setIsFailed} />
+      )}
       {!isFailed &&
         firstBoxArr.map((v, i) => (
           <ColorBox
@@ -89,7 +93,16 @@ const DashBoard = () => {
             clickFunction={v[2]}
           />
         ))}
-      {isFailed && <Failed score={score} />}
+      {isFailed && (
+        <Failed
+          score={score}
+          setScore={setScore}
+          setOriginalRGB={setOriginalRGB}
+          setCorrectColor={setCorrectColor}
+          setIsFailed={setIsFailed}
+          setStarted={setStarted}
+        />
+      )}
     </div>
   );
 };
