@@ -20,7 +20,6 @@
   - [Third Party Library](#third-party-library)
   - [Version Control](#version-control)
 - [Architecture](#architecture)
-- [Database Schema](#database-schema)
 - [Frontend Technique](#frontend-technique)
   - [React (hook)](#react-hook)
   - [Third-Party Modules](#third-party-library-1)
@@ -67,8 +66,6 @@
 - Server Architecture
 
   ![image](https://github.com/jenniehuang/color-picker/blob/master/color-picker%20archi.png?raw=true)
-
-## Database Schema
 
 ## Frontend Technique
 
