@@ -1,9 +1,9 @@
 # color-picker
 
-🎨Color picker is a game testing your eyesight and find the odd one out in this game that gets harder with every point you get!
+🎨 Color picker is a game that tests your eyesight. Find the odd one out in this game that gets harder with every point you get!
 <br/>
 <br/>
-🔗Website URL: https://www.color-picker.xyz/
+🔗 Website URL: https://www.color-picker.xyz/
 <br/>
 
 ![image](https://github.com/jenniehuang/color-picker/blob/master/demo0.png?raw=true)
